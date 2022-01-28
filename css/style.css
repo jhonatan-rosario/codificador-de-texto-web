@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+*,
+::before,
+::after {
+    border: none;
+    outline: none;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr 0.2fr;
+    max-width: 1440px;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.container > header {
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.container > main {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+    margin-top: 7.5rem;
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+}
+
+.container > footer {
+    margin-top: 4.5rem;
+    padding: 1.5rem;
+}
+
+.text-input {
+    flex: 1 1 20rem;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--primary);
+    font-size: 2.6rem;
+    resize: none;
+}
+
+.text-input::placeholder { color: var(--primary); }
+
+.info {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: start;
+    justify-self: end;
+    align-items: start;
+}
+
+.info > img {
+    height: auto;
+    width: 1.5rem;
+}
+
+.info > span {
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.button-container {
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    flex-flow: nowrap column;
+    justify-content: stretch;
+    gap: 1.5rem;
+}
+
+.button-container > button {
+    height: 6.5rem;
+    font-size: 1.6rem;
+    border-radius: 2rem;
+}
+
+.button-container > button:nth-child(1) {
+    background-color: var(--primary);
+    color: var(--text-default);
+}
+
+.button-container > button:nth-child(2) {
+    background-color: var(--background);
+    color: var(--primary);
+    border: solid 1.5px var(--primary);
+}
+
+.result-container {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    background-color: var(--surface);
+    border-radius: 2rem;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.result-container .text-not-found {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.result-container .text-not-found > img { display: none; }
+
+.result-container .text-not-found.hidden { display: none; }
+
+.result-container h2 {
+    font-size: 2.4rem;
+}
+
+.result-container p {
+    font-size: 1.6rem;
+}
+
+.result-container .result-output { 
+    display: none;
+    width: 100%;
+    color: var(--text-secondary);
+    font-size: 2.6rem;
+    resize: none; 
+}
+
+.result-container > button {
+    display: none;
+    margin-top: 6.5rem;
+    height: 6.5rem;
+    width: 100%;
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    background-color: var(--surface);
+    color: var(--primary);
+    border: solid 1.5px var(--primary);
+}
+
+.result-container .show { display: block; }
+
+/* 
+tablet: 768px;
+computer: 1024px;
+*/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 65%;
+    }
+
+    .container > header {
+        padding: 2rem 3rem;
+    }
+
+    .container > main {
+        padding: 2em 3rem;
+    }
+
+    .container > footer {
+        padding: 2rem 3rem;
+    }
+
+    .button-container {
+        flex-flow: nowrap row;
+        justify-content: center;
+    }
+
+    .button-container > button {
+        flex: 1 1 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 70%;
+    }
+
+    .container {
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: 8rem 1fr;
+        grid-template-areas: 
+            "header footer"
+            "main footer"
+        ;
+    }
+
+    .container > header {
+        grid-area: header;
+        padding: 3rem 4rem;
+    }
+
+    .container > main {
+        grid-area: main;
+        padding: 3rem 4rem;
+        justify-self: end;
+        max-width: 70rem;
+    }
+
+    .container > footer {
+        grid-area: footer;
+        margin: 0;
+        padding: 3rem 4rem;
+        height: 100%;
+    }
+
+    .container > footer .result-container {
+        height: 100%;
+        max-width: 50rem;
+    }
+
+    .result-container .text-not-found > img { display: block; }
+}
+
+@media (min-width: 1440px) { 
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
