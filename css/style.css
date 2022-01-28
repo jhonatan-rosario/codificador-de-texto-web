@@ -51,7 +51,6 @@ body {
 }
 
 .text-input {
-    /* height: 40vh; */
     flex: 1 1 20rem;
     width: 100%;
     background-color: var(--background);
@@ -145,7 +144,6 @@ body {
     resize: none; 
 }
 
-
 .result-container > button {
     display: none;
     margin-top: 6.5rem;
@@ -182,10 +180,6 @@ computer: 1024px;
         padding: 2rem 3rem;
     }
 
-    .text-input {
-        /* height: 50vh; */
-    }
-
     .button-container {
         flex-flow: nowrap row;
         justify-content: center;
@@ -203,6 +197,7 @@ computer: 1024px;
 
     .container {
         grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: 8rem 1fr;
         grid-template-areas: 
             "header footer"
             "main footer"
@@ -239,6 +234,5 @@ computer: 1024px;
 @media (min-width: 1440px) { 
     .container {
         grid-template-columns: 1fr 1fr;
-        /* justify-content: center; */
     }
 }
