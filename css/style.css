@@ -24,19 +24,20 @@ body {
 .container {
     min-height: 100%;
     width: 100%;
-    padding: 1.5rem;
     background-color: var(--background);
 }
 
 .container > header {
     height: 5.5rem;
     width: 100%;
+    padding: 1.5rem;
 }
 
 .container > main {
     margin-top: 7.5rem;
     height: 100%;
     width: 100%;
+    padding: 1.5rem;
 }
 
 .text-input {
@@ -70,6 +71,7 @@ body {
 .button-container {
     margin-top: 2rem;
     display: flex;
+    width: 100%;
     flex-flow: nowrap column;
     justify-content: stretch;
     gap: 1.5rem;
@@ -151,6 +153,23 @@ computer: 1024px;
 @media (min-width: 768px) {
     html {
         font-size: 70%;
+    }
+
+    .container > header {
+        padding: 1.5rem 3rem;
+    }
+
+    .container > main {
+        padding: 1.5rem 3rem;
+    }
+
+    .button-container {
+        flex-flow: nowrap row;
+        justify-content: center;
+    }
+
+    .button-container > button {
+        flex: 1 1 auto;
     }
 }
 
