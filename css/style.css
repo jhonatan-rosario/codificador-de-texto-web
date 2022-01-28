@@ -17,31 +17,42 @@ html {
 }
 
 body {
-    height: 100vh;
-    width: 100%;
-}
-
-.container {
-    min-height: 100%;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--background);
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr 0.2fr;
+    max-width: 1440px;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
 .container > header {
-    height: 5.5rem;
     width: 100%;
     padding: 1.5rem;
 }
 
 .container > main {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
     margin-top: 7.5rem;
-    height: 100%;
     width: 100%;
+    padding: 1.5rem 1.5rem;
+}
+
+.container > footer {
+    margin-top: 4.5rem;
     padding: 1.5rem;
 }
 
 .text-input {
-    height: 40vh;
+    /* height: 40vh; */
+    flex: 1 1 20rem;
     width: 100%;
     background-color: var(--background);
     color: var(--primary);
@@ -55,6 +66,7 @@ body {
     margin-top: 2rem;
     display: flex;
     justify-content: start;
+    justify-self: end;
     align-items: start;
 }
 
@@ -95,7 +107,10 @@ body {
 }
 
 .result-container {
-    margin-top: 7.5rem;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: center;
+    align-items: center;
     padding: 2.5rem;
     background-color: var(--surface);
     border-radius: 2rem;
@@ -152,15 +167,23 @@ computer: 1024px;
 
 @media (min-width: 768px) {
     html {
-        font-size: 70%;
+        font-size: 65%;
     }
 
     .container > header {
-        padding: 1.5rem 3rem;
+        padding: 2rem 3rem;
     }
 
     .container > main {
-        padding: 1.5rem 3rem;
+        padding: 2em 3rem;
+    }
+
+    .container > footer {
+        padding: 2rem 3rem;
+    }
+
+    .text-input {
+        /* height: 50vh; */
     }
 
     .button-container {
@@ -175,6 +198,47 @@ computer: 1024px;
 
 @media (min-width: 1024px) {
     html {
-        font-size: 75%;
+        font-size: 70%;
+    }
+
+    .container {
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-areas: 
+            "header footer"
+            "main footer"
+        ;
+    }
+
+    .container > header {
+        grid-area: header;
+        padding: 3rem 4rem;
+    }
+
+    .container > main {
+        grid-area: main;
+        padding: 3rem 4rem;
+        justify-self: end;
+        max-width: 70rem;
+    }
+
+    .container > footer {
+        grid-area: footer;
+        margin: 0;
+        padding: 3rem 4rem;
+        height: 100%;
+    }
+
+    .container > footer .result-container {
+        height: 100%;
+        max-width: 50rem;
+    }
+
+    .result-container .text-not-found > img { display: block; }
+}
+
+@media (min-width: 1440px) { 
+    .container {
+        grid-template-columns: 1fr 1fr;
+        /* justify-content: center; */
     }
 }

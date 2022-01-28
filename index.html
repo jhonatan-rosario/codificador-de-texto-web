@@ -14,7 +14,7 @@
 
     <!-- JS -->
     <script src="js/script.js" defer></script>
-    
+
     <title>Codificador de Texto</title>
 </head>
 <body>
@@ -22,14 +22,18 @@
         <header> <img src="assets/logo.svg" alt="logo"> </header>
         <main> 
             <textarea id="textInput" class="text-input" placeholder="Digite seu texto" autofocus></textarea>
-            <div class="info">
-                <img src="assets/info.svg" alt="info">
-                <span>Apenas letras minúsculas e sem acento.</span>
+            <div>
+                <div class="info">
+                    <img src="assets/info.svg" alt="info">
+                    <span>Apenas letras minúsculas e sem acento.</span>
+                </div>
+                <div class="button-container">
+                    <button id="btnEncrypt">Criptografar</button>
+                    <button id="btnDecrypt">Descriptografar</button>
+                </div>
             </div>
-            <div class="button-container">
-                <button id="btnEncrypt">Criptografar</button>
-                <button id="btnDecrypt">Descriptografar</button>
-            </div>
+        </main>
+        <footer>
             <div class="result-container">
                 <div id="textNotFound" class="text-not-found">
                     <img src="assets/text-not-found.svg" alt="text not found">
@@ -39,7 +43,7 @@
                 <textarea id="resultOutput" class="result-output" readonly></textarea>
                 <button id="btnCopy">Copiar</button>
             </div>
-        </main>
+        </footer>
     </div>
 </body>
 </html>
