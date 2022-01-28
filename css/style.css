@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+*,
+::before,
+::after {
+    border: none;
+    outline: none;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    min-height: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--background);
+}
+
+.container > header {
+    height: 5.5rem;
+    width: 100%;
+}
+
+.container > main {
+    margin-top: 7.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.text-input {
+    height: 40vh;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--primary);
+    font-size: 2.6rem;
+    resize: none;
+}
+
+.text-input::placeholder { color: var(--primary); }
+
+.info {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.info > img {
+    height: auto;
+    width: 1.5rem;
+}
+
+.info > span {
+    margin-left: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.button-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: stretch;
+    gap: 1.5rem;
+}
+
+.button-container > button {
+    height: 6.5rem;
+    font-size: 1.6rem;
+    border-radius: 2rem;
+}
+
+.button-container > button:nth-child(1) {
+    background-color: var(--primary);
+    color: var(--text-default);
+}
+
+.button-container > button:nth-child(2) {
+    background-color: var(--background);
+    color: var(--primary);
+    border: solid 1.5px var(--primary);
+}
+
+.result-container {
+    margin-top: 7.5rem;
+    padding: 2.5rem;
+    background-color: var(--surface);
+    border-radius: 2rem;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.result-container .text-not-found {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.result-container .text-not-found > img { display: none; }
+
+.result-container .text-not-found.hidden { display: none; }
+
+.result-container h2 {
+    font-size: 2.4rem;
+}
+
+.result-container p {
+    font-size: 1.6rem;
+}
+
+.result-container .result-output { 
+    display: none;
+    width: 100%;
+    color: var(--text-secondary);
+    font-size: 2.6rem;
+    resize: none; 
+}
+
+
+.result-container > button {
+    display: none;
+    margin-top: 6.5rem;
+    height: 6.5rem;
+    width: 100%;
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    background-color: var(--surface);
+    color: var(--primary);
+    border: solid 1.5px var(--primary);
+}
+
+.result-container .show { display: block; }
+
+/* 
+tablet: 768px;
+computer: 1024px;
+*/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 75%;
+    }
+}
