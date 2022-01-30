@@ -40,7 +40,7 @@ body {
     display: flex;
     flex-flow: nowrap column;
     justify-content: space-between;
-    margin-top: 7.5rem;
+    margin-top: 3rem;
     width: 100%;
     padding: 1.5rem 1.5rem;
 }
@@ -139,6 +139,7 @@ body {
 .result-container .result-output { 
     display: none;
     width: 100%;
+    flex: 1 1 auto;
     color: var(--text-secondary);
     font-size: 2.6rem;
     resize: none; 
