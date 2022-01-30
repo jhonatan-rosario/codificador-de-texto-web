@@ -28,8 +28,8 @@
                     <span>Apenas letras minúsculas e sem acento.</span>
                 </div>
                 <div class="button-container">
-                    <button id="btnEncrypt">Criptografar</button>
-                    <button id="btnDecrypt">Descriptografar</button>
+                    <button id="btnEncrypt" class="primary-button">Criptografar</button>
+                    <button id="btnDecrypt" class="secondary-button">Descriptografar</button>
                 </div>
             </div>
         </main>
@@ -41,7 +41,10 @@
                     <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
                 </div>
                 <textarea id="resultOutput" class="result-output" readonly></textarea>
-                <button id="btnCopy">Copiar</button>
+                <div class="result-button-container">
+                    <button id="btnCopy" class="primary-button">Copiar</button>
+                    <button id="btnClean" class="secondary-button">Limpar</button>
+                </div>
             </div>
         </footer>
     </div>

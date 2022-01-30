@@ -8,20 +8,11 @@ async function clipboardPermission() {
 
     const textInput = document.getElementById("textInput");
     const resultOutput = document.getElementById("resultOutput");
+    const textNotFound = document.getElementById("textNotFound");
     const btnEncrypt = document.getElementById("btnEncrypt");
     const btnDecrypt = document.getElementById("btnDecrypt");
     const btnCopy = document.getElementById("btnCopy");
-    const textNotFound = document.getElementById("textNotFound");
-
-    /**
-     * 
-     * A letra "e" é convertida para "enter"
-     * A letra "i" é convertida para "imes"
-     * A letra "a" é convertida para "ai"
-     * A letra "o" é convertida para "ober"
-     * A letra "u" é convertida para "ufat"
-     *  
-     */
+    const btnClean = document.getElementById("btnClean");
 
     function encrypt(text) {
         text = text.replaceAll("e", "enter");
@@ -44,8 +35,14 @@ async function clipboardPermission() {
     function showResult(text) {
         resultOutput.value = text;
         textNotFound.classList.add("hidden");
-        resultOutput.classList.add("show");
-        btnCopy.classList.add("show");
+        resultOutput.classList.add("show-result");
+        btnCopy.parentNode.classList.add("show-button")
+    }
+
+    function hiddenResult() {
+        textNotFound.classList.remove("hidden")
+        resultOutput.classList.remove("show-result");
+        btnCopy.parentNode.classList.remove("show-button")
     }
 
     btnEncrypt.onclick = () => {
@@ -71,4 +68,10 @@ async function clipboardPermission() {
             navigator.clipboard.writeText(resultOutput.value);
         }
     }
+
+    btnClean.onclick = () => {
+        resultOutput.value = "";
+        hiddenResult();
+    }
+
 })();

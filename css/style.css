@@ -88,18 +88,18 @@ body {
     gap: 1.5rem;
 }
 
-.button-container > button {
+button {
     height: 6.5rem;
     font-size: 1.6rem;
     border-radius: 2rem;
 }
 
-.button-container > button:nth-child(1) {
+.primary-button {
     background-color: var(--primary);
     color: var(--text-default);
 }
 
-.button-container > button:nth-child(2) {
+.secondary-button {
     background-color: var(--background);
     color: var(--primary);
     border: solid 1.5px var(--primary);
@@ -136,7 +136,7 @@ body {
     font-size: 1.6rem;
 }
 
-.result-container .result-output { 
+.result-output { 
     display: none;
     width: 100%;
     flex: 1 1 auto;
@@ -145,19 +145,18 @@ body {
     resize: none; 
 }
 
-.result-container > button {
+.show-result { display: block; }
+
+.result-button-container {
+    margin-top: 2rem;
     display: none;
-    margin-top: 6.5rem;
-    height: 6.5rem;
     width: 100%;
-    font-size: 1.6rem;
-    border-radius: 2rem;
-    background-color: var(--surface);
-    color: var(--primary);
-    border: solid 1.5px var(--primary);
+    flex-flow: nowrap column;
+    justify-content: stretch;
+    gap: 1.5rem;
 }
 
-.result-container .show { display: block; }
+.show-button { display: flex; }
 
 /* 
 tablet: 768px;
@@ -181,14 +180,14 @@ computer: 1024px;
         padding: 2rem 3rem;
     }
 
-    .button-container {
+    .button-container, .result-button-container {
         flex-flow: nowrap row;
         justify-content: center;
     }
 
-    .button-container > button {
+    .button-container > button, .result-button-container > button {
         flex: 1 1 auto;
-    }
+    }  
 }
 
 @media (min-width: 1024px) {
